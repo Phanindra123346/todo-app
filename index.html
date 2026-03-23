@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Todo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-top">
+        <span class="emoji">✅</span>
+        <h1>My Tasks</h1>
+      </div>
+      <p class="subtitle" id="taskCount">0 tasks remaining</p>
+    </header>
+
+    <!-- ADD TASK FORM -->
+    <div class="add-section">
+      <div class="input-row">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="What do you need to do?"
+          maxlength="100"
+        />
+        <button id="addBtn" onclick="addTask()">+ Add</button>
+      </div>
+    </div>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterTasks('all', this)">All</button>
+      <button class="filter-btn" onclick="filterTasks('active', this)">Active</button>
+      <button class="filter-btn" onclick="filterTasks('done', this)">Done</button>
+    </div>
+
+    <!-- TASK LIST -->
+    <ul class="task-list" id="taskList">
+      <!-- Tasks appear here via JavaScript -->
+    </ul>
+
+    <!-- EMPTY STATE -->
+    <div class="empty-state" id="emptyState">
+      <p>🎉 No tasks here!</p>
+      <span>Add something above to get started.</span>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span id="doneCount">0 completed</span>
+      <button class="clear-btn" onclick="clearDone()">Clear Done</button>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
